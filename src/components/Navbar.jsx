@@ -7,6 +7,7 @@ import ImageListItem from "@mui/material/ImageListItem";
 import { dFlex } from "../Theme/CommonStyles";
 import { Typography } from "@mui/material";
 import RedeemIcon from "@mui/icons-material/Redeem";
+
 export const Navbar = () => {
   return (
     <Box sx={{ border: "1px solid red",position:"fixed",top:"0",width:"100%",zIndex:"1300"}}>

@@ -7,7 +7,7 @@ const Home = () => {
     <div className='car_container'>
       <Carousel interval={800} color={"red"}>
         <Carousel.Item>
-          <Link to="/WomenData">
+          <Link to="/menspage">
             <img
               className="img_container "
               src="https://static.zara.net/photos///contents/mkt/spots/ss22-north-man-new/subhome-xmedia-24-2//w/1366/IMAGE-portrait-ipad-fill-2e68dd26-9c46-4b6f-873b-d2b8a400c114-default_0.jpg?ts=1655472730530"
@@ -38,7 +38,7 @@ const Home = () => {
           </div>
         </Carousel.Item>
         <Carousel.Item interval={500}>
-          <Link to="/LinenPage"><img
+          <Link to="/kidspage"><img
             className="img_container"
             src="https://static.zara.net/photos///contents/mkt/spots/ss22-north-kids-babygirl/subhome-xmedia-24//w/1366/IMAGE-portrait-ipad-fill-50d4dbde-4ce5-4725-94b1-3ed7cd842b40-default_0.jpg?ts=1655378294670"
             alt="Second slide"
@@ -73,7 +73,7 @@ const Home = () => {
           </div>
         </Carousel.Item>
         <Carousel.Item>
-          <Link to="/KidsData">
+          <Link to="/womenpage">
             <img
               className="img_container "
               src="https://static.zara.net/photos///contents/mkt/spots/ss22-north-woman-dresses/subhome-xmedia-24-2//w/1366/IMAGE-portrait-ipad-fill-8940e088-2e72-430f-9e05-07485ccdcb74-default_0.jpg?ts=1655311161031"
