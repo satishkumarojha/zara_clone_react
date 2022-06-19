@@ -18,14 +18,14 @@ const nav=useNavigate()
     })
     
   }
-  console.log(formdata)
+  // console.log(formdata)
 
 
   async function onsubmit(e){
 
     e.preventDefault()
     // window.location.href="Login.js"
-    console.log(formdata);
+    // console.log(formdata);
   // savedata()
 
   try {
@@ -40,11 +40,11 @@ const nav=useNavigate()
 
     });
     let data=await res.json()
-    console.log(data)
+    // console.log(data)
 nav("/login")
     
 } catch (error) {
-    console.log(error)
+    // console.log(error)
     
 }
    
@@ -72,14 +72,6 @@ nav("/login")
    
 
 <form onSubmit={onsubmit} className='container'>
-
-
- {/* <input   onChange={handle} className="input-text"type="text" id="fname" name="email" placeholder='E-MAIL'/>
-<input  onChange={handle} type="text" id="fname" name="password" placeholder='PASSWORD'/>
-<input  onChange={handle} type="text" id="fname" name="name" placeholder='NAME'/>
-<input  onChange={handle} type="text" id="fname" name="phone" placeholder='phone number'/>  */}
-
-
 
    <label for="fname">First Name</label>
   <div className='Left-form'> 

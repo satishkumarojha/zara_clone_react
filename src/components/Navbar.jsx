@@ -7,26 +7,39 @@ import ImageListItem from "@mui/material/ImageListItem";
 import { dFlex } from "../Theme/CommonStyles";
 import { Typography } from "@mui/material";
 import RedeemIcon from "@mui/icons-material/Redeem";
+import { useNavigate } from 'react-router-dom';
 
 export const Navbar = () => {
+  const navigate = useNavigate();
+  const handleHome = ()=>{
+    navigate("/");
+  }
+  const handleNav = (dt)=>{
+    if(dt=="log"){
+      navigate("/login");
+    }else{
+      navigate("/cart");
+    }
+  }
   return (
-    <Box sx={{ border: "1px solid red",position:"fixed",top:"0",width:"100%",zIndex:"1300"}}>
+    <Box sx={{position:"fixed",top:"0",width:"100%",zIndex:"1300"}}>
       <Container maxWidth="xl" sx={{ ...dFlex }}>
         {/*-----------------------------------Left box------------------ */}
         <Box
           maxWidth="550px"
-          sx={{ ...dFlex, border: "1px solid blue", pt: "20px" }}
+          sx={{ ...dFlex, pt: "20px" }}
         >
           <MenuIcon />
           <ImageList>
             <ImageListItem
               
-              sx={{ pl: "55px", border: "1px solid red",maxWidth:"500px" }}
+              sx={{ pl: "55px",maxWidth:"500px",cursor:"pointer" }}
             >
               <img
                 src={`https://logodownload.org/wp-content/uploads/2014/05/zara-logo-1.png`}
                 alt={`logo`}
                 loading="lazy"
+                onClick={handleHome}
               />
             </ImageListItem>
           </ImageList>
@@ -36,7 +49,6 @@ export const Navbar = () => {
         <Box 
           maxWidth="550px"
           sx={{...dFlex,
-            border: "1px solid red",
             pt: "20px",
            width:"550px"
           }}
@@ -48,14 +60,14 @@ export const Navbar = () => {
           {/* LOGIN HELP CART  DIV*/}
           <Box sx={{...dFlex,alignItems:"center"}}>
             <Box sx={{width:"60px"}}>
-             <Typography sx={{fontSize:"13px",color:"black"}}>LOG IN</Typography>
+             <Typography sx={{fontSize:"13px",color:"black",cursor:"pointer"}} onClick={()=>handleNav("log")}>LOG IN</Typography>
             </Box>
             <Box sx={{width:"60px"}}>
             <Typography sx={{fontSize:"13px",color:"black"}}>HELP</Typography>
             </Box>
-            <Box sx={{width:"60px"}}>
+            <Box sx={{width:"60px",cursor:"pointer"}}>
             <Typography>
-               <RedeemIcon/>
+               <RedeemIcon  onClick={()=>handleNav("cart")}/>
             </Typography>
             </Box>
           </Box>
