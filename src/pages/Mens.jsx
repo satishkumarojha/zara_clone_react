@@ -23,8 +23,9 @@ export const Mens = () => {
       <div className="mens_gallery">
         <div className="card_wraper">
           {data.mensdata.map((mensproduct) => {
+            console.log(mensproduct.id);
             return (
-              <Link style={{ textDecoration: 'none'}} to="/products">
+              <Link style={{ textDecoration: 'none'}} to={`/menspage/${mensproduct.id}`}>
                 <div className="card_container">
                   <div>
                     <img src={mensproduct.image} alt="mp" />

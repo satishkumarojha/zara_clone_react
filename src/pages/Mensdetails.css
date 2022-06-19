@@ -1,0 +1,44 @@
+.details_container{
+    margin-top: 150px;
+    display: flex;
+}
+.details_text{
+    width: 20%;
+    padding-left: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin-right: 20%;
+}
+.details_text>p{
+    text-align: left;
+}
+.details_text>h6{
+    text-align: left;
+}
+.details_text>h3{
+    text-align: left;
+}
+.details_img{
+    height: 500px;
+    margin-right: 5%;
+
+}
+img{
+    height: 100%;
+}
+h1{
+    font-size: 20px;
+    
+}
+.details_desc{
+display: flex;
+text-align: left;
+flex-direction: column;
+justify-content: center;
+}
+button{
+    color: white;
+    background-color: black;
+    width: 300px;
+}

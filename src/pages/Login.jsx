@@ -3,9 +3,10 @@ import "./Login.css";
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-
+import { AuthContext } from "../context/AuthContext";
 const Login = ({ log }) => {
-  const nav = useNavigate();
+  const navigate = useNavigate();
+  let{isAuth,handleAuth} = useContext(AuthContext);
   const [formdata, setformdata] = useState({});
   const handlechange = (e) => {
     const { name, value } = e.target;
@@ -33,9 +34,10 @@ const Login = ({ log }) => {
       if (data.status) {
         localStorage.setItem("userdata", JSON.stringify(data.user));
         localStorage.setItem("token", data.token);
-        nav("/Home");
+        navigate("/");
 
         //  setAuth(true);
+        handleAuth();
         log(data.user.name);
 
         //  console.log("userdata",data.user)

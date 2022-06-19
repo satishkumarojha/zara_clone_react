@@ -24,7 +24,7 @@ export const Kids = () => {
             <div className="card_wraper">
               {data.kidsdata.map((mensproduct) => {
                 return (
-                  <Link style={{ textDecoration: 'none'}} to="/products">
+                  <Link style={{ textDecoration: 'none'}} to={`/kidspage/${mensproduct.id}`}>
                     <div className="card_container">
                       <div>
                         <img src={mensproduct.image} alt="mp" />

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
 import MenuIcon from "@mui/icons-material/Menu";
@@ -8,9 +8,10 @@ import { dFlex } from "../Theme/CommonStyles";
 import { Typography } from "@mui/material";
 import RedeemIcon from "@mui/icons-material/Redeem";
 import { useNavigate } from 'react-router-dom';
-
+import { AuthContext } from "../context/AuthContext";
 export const Navbar = () => {
-  const navigate = useNavigate();
+  const navigate = useNavigate(AuthContext);
+  let{isAuth} = useContext(AuthContext);
   const handleHome = ()=>{
     navigate("/");
   }
@@ -60,7 +61,7 @@ export const Navbar = () => {
           {/* LOGIN HELP CART  DIV*/}
           <Box sx={{...dFlex,alignItems:"center"}}>
             <Box sx={{width:"60px"}}>
-             <Typography sx={{fontSize:"13px",color:"black",cursor:"pointer"}} onClick={()=>handleNav("log")}>LOG IN</Typography>
+             <Typography sx={{fontSize:"13px",color:"black",cursor:"pointer"}} onClick={()=>handleNav("log")}>{isAuth?"LOG OUT":"LOG IN"}</Typography>
             </Box>
             <Box sx={{width:"60px"}}>
             <Typography sx={{fontSize:"13px",color:"black"}}>HELP</Typography>
